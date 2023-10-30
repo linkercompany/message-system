@@ -10,5 +10,10 @@ export function config(req: Request, res: Response, next: NextFunction): void {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-PINGOTHER')
     res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH, HEAD, OPTIONS')
     res.header('Access-Control-Expose-Headers', 'Set-Cookie')
+
+    if (!req.session.user) {
+        req.session.user = {}
+    }
+
     next()
 }
