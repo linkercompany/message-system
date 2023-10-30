@@ -15,7 +15,14 @@ type status = {
 export class MessageController {
     @ahandler
     @formatter
-    static async sendMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
+    static async sendMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        checkAccess(['message', 'sendMessage'], req.session.user!)
+
+        return {
+            continue: true,
+            next: false
+        }
+    }
 
     @ahandler
     @formatter
