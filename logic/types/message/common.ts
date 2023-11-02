@@ -6,29 +6,39 @@
 export interface base {
   body?: any;
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;
   };
 }
 
+export type date = string | Date;
+
 export interface message {
+  createdAt?: string | Date;
   message?: string;
   receiver?: string;
   sender?: string;
+  updatedAt?: string | Date;
 }
 
 export interface messageRequired {
+  createdAt?: string | Date;
   message: string;
   receiver: string;
   sender: string;
+  updatedAt?: string | Date;
 }
 
 export interface query {
+  createdAt?: string | Date;
   message?: string;
   receiver?: string;
   sender?: string;
+  updatedAt?: string | Date;
 }

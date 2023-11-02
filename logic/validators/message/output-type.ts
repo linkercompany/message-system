@@ -1,7 +1,7 @@
 import Joi from 'joi'
 import { messageRequired } from './common'
 
-export const sendMessage = Joi.boolean().required()
+export const sendMessage = messageRequired
 
 export const getMessage = messageRequired
 

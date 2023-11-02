@@ -6,9 +6,11 @@
 export interface deleteMessage {
   body?: any;
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;
@@ -18,9 +20,11 @@ export interface deleteMessage {
 export interface getMessage {
   body?: any;
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;
@@ -30,9 +34,11 @@ export interface getMessage {
 export interface getMessages {
   body?: any;
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;
@@ -41,14 +47,18 @@ export interface getMessages {
 
 export interface sendMessage {
   body?: {
+    createdAt?: string | Date;
     message: string;
     receiver: string;
     sender: string;
+    updatedAt?: string | Date;
   };
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;
@@ -57,14 +67,18 @@ export interface sendMessage {
 
 export interface updateMessage {
   body?: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   query: {
+    createdAt?: string | Date;
     message?: string;
     receiver?: string;
     sender?: string;
+    updatedAt?: string | Date;
   };
   user: {
     permissions?: any;

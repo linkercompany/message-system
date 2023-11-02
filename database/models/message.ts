@@ -1,7 +1,7 @@
 import { prop, getModelForClass, modelOptions } from '@typegoose/typegoose'
 
 @modelOptions({
-    schemaOptions: { collection: 'messages', versionKey: false },
+    schemaOptions: { collection: 'messages', versionKey: false, timestamps: true },
     options: { allowMixed: 0 }
 })
 export class Message {

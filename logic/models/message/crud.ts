@@ -21,7 +21,7 @@ export class MessageLogic {
         errorHelper.createError(result)
 
         result = result.toObject()
-        return !result
+        return result
     }
 
     @avalidator

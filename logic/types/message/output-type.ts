@@ -6,17 +6,27 @@
 export type deleteMessage = boolean;
 
 export interface getMessage {
+  createdAt?: string | Date;
   message: string;
   receiver: string;
   sender: string;
+  updatedAt?: string | Date;
 }
 
-export type getMessages = {
+export type getMessages = ({
+  createdAt?: string | Date;
   message: string;
   receiver: string;
   sender: string;
-}[];
+  updatedAt?: string | Date;
+})[];
 
-export type sendMessage = boolean;
+export interface sendMessage {
+  createdAt?: string | Date;
+  message: string;
+  receiver: string;
+  sender: string;
+  updatedAt?: string | Date;
+}
 
 export type updateMessage = boolean;
