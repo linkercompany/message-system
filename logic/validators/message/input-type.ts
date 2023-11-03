@@ -10,6 +10,10 @@ export const updateMessage = base.keys({
     body: message
 })
 
-export const sendMessage = base.keys({
+export const createMessage = base.keys({
     body: messageRequired
+})
+
+export const sendMessage = base.keys({
+    body: message
 })

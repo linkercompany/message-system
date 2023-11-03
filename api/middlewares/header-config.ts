@@ -11,9 +11,21 @@ export function config(req: Request, res: Response, next: NextFunction): void {
     res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH, HEAD, OPTIONS')
     res.header('Access-Control-Expose-Headers', 'Set-Cookie')
 
-    if (!req.session.user) {
-        req.session.user = {}
+    if (req.session.user) {
+        next()
     }
+
+    req.session.user = {}
+
+    next()
+}
+
+export function wsConfig(ws: any, req: Request, next: NextFunction): void {
+    if (req.session.user) {
+        next()
+    }
+
+    req.session.user = {}
 
     next()
 }

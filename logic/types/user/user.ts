@@ -8,5 +8,6 @@ export interface login {
 }
 
 export interface user {
+  id?: string;
   permissions?: any;
 }

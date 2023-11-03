@@ -24,3 +24,10 @@ export const base = Joi.object({
     user: user.required(),
     body: Joi.any()
 })
+
+export const sendMessage = Joi.object({
+    receiver: Joi.string().required(),
+    message: Joi.string().required(),
+    createdAt: date,
+    updatedAt: date
+})

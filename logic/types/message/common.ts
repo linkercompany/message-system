@@ -13,6 +13,7 @@ export interface base {
     updatedAt?: string | Date;
   };
   user: {
+    id?: string;
     permissions?: any;
   };
 }
@@ -40,5 +41,12 @@ export interface query {
   message?: string;
   receiver?: string;
   sender?: string;
+  updatedAt?: string | Date;
+}
+
+export interface sendMessage {
+  createdAt?: string | Date;
+  message: string;
+  receiver: string;
   updatedAt?: string | Date;
 }

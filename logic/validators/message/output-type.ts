@@ -1,6 +1,8 @@
 import Joi from 'joi'
 import { messageRequired } from './common'
 
+export const createMessage = messageRequired
+
 export const sendMessage = messageRequired
 
 export const getMessage = messageRequired

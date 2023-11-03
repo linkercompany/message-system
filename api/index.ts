@@ -9,9 +9,9 @@ import { createSession } from './middlewares/session'
 import { app } from './ws'
 
 createSession(app) // create session
+app.use(headerConfig) // set headers
 app.use(morgan('dev')) // logging
 app.use(json({ limit: '10mb' })) // parse json
-app.use(headerConfig) // set headers
 addRoutes(app) // add routes
 app.use(status500) // handle errors
 

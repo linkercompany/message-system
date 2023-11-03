@@ -4,7 +4,8 @@ import { MessageController } from '../controllers/message'
 
 const messageRouter = Router()
 
-messageRouter.post('/', MessageController.sendMessage)
+messageRouter.post('/', MessageController.createMessage)
+messageRouter.post('/send', MessageController.sendMessage)
 messageRouter.put('/', MessageController.updateMessage)
 messageRouter.delete('/', MessageController.deleteMessage)
 messageRouter.get('/query', MessageController.getMessage)

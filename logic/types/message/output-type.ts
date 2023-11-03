@@ -3,6 +3,14 @@
  * Do not modify this file manually
  */
 
+export interface createMessage {
+  createdAt?: string | Date;
+  message: string;
+  receiver: string;
+  sender: string;
+  updatedAt?: string | Date;
+}
+
 export type deleteMessage = boolean;
 
 export interface getMessage {

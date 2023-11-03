@@ -1,7 +1,7 @@
 import { MessageLogic } from '../../logic/models/message'
 import { checkAccess } from '../../logic/models/user/access'
 
-import { ahandler, formatter as wrapper } from 'backend-helper-kit'
+import { ahandler, formatter as wrapper, returnFormatter } from 'backend-helper-kit'
 
 import { Request, Response, NextFunction } from 'express'
 
@@ -16,27 +16,51 @@ export class MessageController {
     @ahandler
     @formatter
     static async sendMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
-        checkAccess(['message', 'sendMessage'], req.session.user!)
+        checkAccess(['message', 'send-message'], req.session.user!)
+
+        res.json(
+            returnFormatter(
+                await MessageLogic.sendMessage({
+                    body: req.body,
+                    query: req.query,
+                    user: req.session.user!
+                })
+            )
+        )
 
         return {
-            continue: true,
-            next: false
+            continue: false,
+            next: true
         }
     }
 
     @ahandler
     @formatter
-    static async updateMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
+    static async createMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        checkAccess(['message', 'create-message'], req.session.user!)
+    }
 
     @ahandler
     @formatter
-    static async deleteMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
+    static async updateMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        throw new Error('Method not implemented.')
+    }
 
     @ahandler
     @formatter
-    static async getMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
+    static async deleteMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        throw new Error('Method not implemented.')
+    }
 
     @ahandler
     @formatter
-    static async getMessages(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
+    static async getMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        checkAccess(['message', 'read-message'], req.session.user!)
+    }
+
+    @ahandler
+    @formatter
+    static async getMessages(req: Request, res: Response, next: NextFunction): Promise<status | void> {
+        checkAccess(['message', 'read-message'], req.session.user!)
+    }
 }

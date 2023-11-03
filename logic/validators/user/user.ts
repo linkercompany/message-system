@@ -1,7 +1,8 @@
 import Joi from 'joi'
 
 export const user = Joi.object({
-    permissions: Joi.any()
+    permissions: Joi.any(),
+    id: Joi.string()
 })
 
 export const login = Joi.object({

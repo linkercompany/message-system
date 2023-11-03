@@ -3,49 +3,7 @@
  * Do not modify this file manually
  */
 
-export interface deleteMessage {
-  body?: any;
-  query: {
-    createdAt?: string | Date;
-    message?: string;
-    receiver?: string;
-    sender?: string;
-    updatedAt?: string | Date;
-  };
-  user: {
-    permissions?: any;
-  };
-}
-
-export interface getMessage {
-  body?: any;
-  query: {
-    createdAt?: string | Date;
-    message?: string;
-    receiver?: string;
-    sender?: string;
-    updatedAt?: string | Date;
-  };
-  user: {
-    permissions?: any;
-  };
-}
-
-export interface getMessages {
-  body?: any;
-  query: {
-    createdAt?: string | Date;
-    message?: string;
-    receiver?: string;
-    sender?: string;
-    updatedAt?: string | Date;
-  };
-  user: {
-    permissions?: any;
-  };
-}
-
-export interface sendMessage {
+export interface createMessage {
   body?: {
     createdAt?: string | Date;
     message: string;
@@ -61,6 +19,73 @@ export interface sendMessage {
     updatedAt?: string | Date;
   };
   user: {
+    id?: string;
+    permissions?: any;
+  };
+}
+
+export interface deleteMessage {
+  body?: any;
+  query: {
+    createdAt?: string | Date;
+    message?: string;
+    receiver?: string;
+    sender?: string;
+    updatedAt?: string | Date;
+  };
+  user: {
+    id?: string;
+    permissions?: any;
+  };
+}
+
+export interface getMessage {
+  body?: any;
+  query: {
+    createdAt?: string | Date;
+    message?: string;
+    receiver?: string;
+    sender?: string;
+    updatedAt?: string | Date;
+  };
+  user: {
+    id?: string;
+    permissions?: any;
+  };
+}
+
+export interface getMessages {
+  body?: any;
+  query: {
+    createdAt?: string | Date;
+    message?: string;
+    receiver?: string;
+    sender?: string;
+    updatedAt?: string | Date;
+  };
+  user: {
+    id?: string;
+    permissions?: any;
+  };
+}
+
+export interface sendMessage {
+  body?: {
+    createdAt?: string | Date;
+    message?: string;
+    receiver?: string;
+    sender?: string;
+    updatedAt?: string | Date;
+  };
+  query: {
+    createdAt?: string | Date;
+    message?: string;
+    receiver?: string;
+    sender?: string;
+    updatedAt?: string | Date;
+  };
+  user: {
+    id?: string;
     permissions?: any;
   };
 }
@@ -81,6 +106,7 @@ export interface updateMessage {
     updatedAt?: string | Date;
   };
   user: {
+    id?: string;
     permissions?: any;
   };
 }
