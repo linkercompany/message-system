@@ -22,16 +22,5 @@ export class NotificationController {
 
     @ahandler
     @reqFormatter
-    static async sendMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {
-        for (const item of notifications) {
-            item.send(JSON.stringify(req.body))
-        }
-
-        res.json('sa')
-
-        return {
-            continue: false,
-            next: false
-        }
-    }
+    static async sendMessage(req: Request, res: Response, next: NextFunction): Promise<status | void> {}
 }
